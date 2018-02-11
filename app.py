@@ -1,5 +1,8 @@
+import os
+
 from flask import Flask, flash, render_template, request
 from helpers import *
+
 
 app = Flask(__name__)
 app.secret_key = os.environ["SECRET_KEY"]

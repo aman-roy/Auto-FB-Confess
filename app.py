@@ -7,7 +7,7 @@ from helpers import *
 app = Flask(__name__)
 app.secret_key = os.environ["SECRET_KEY"]
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
 	"""Index page"""
 	if request.method == "POST":

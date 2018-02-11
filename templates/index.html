@@ -25,7 +25,7 @@
     <!-- Google Fonts -->
   	<link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
-
+    
     <script type="text/javascript">
         window.onload = function() {
           {% with messages=get_flashed_messages(with_categories=True) %}
@@ -38,7 +38,11 @@
         };
       </script>
 
-
+      <style type="text/css">
+        a:hover {
+          text-decoration: underline;
+        }
+      </style>
 </head>
 <body><b>
   	<div class="container" style="font-family: 'Coming Soon', cursive;">

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>{{ name }} Confessions</title>
+
+
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+  	<!--Import Google Icon Font-->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  	<!-- Import Jquery-->
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <!-- Web Icon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Google Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Coming+Soon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
+
+    <script type="text/javascript">
+        window.onload = function() {
+          {% with messages=get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                Materialize.toast('{{ message }}', 4000);
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        };
+      </script>
+
+
+</head>
+<body><b>
+  	<div class="container" style="font-family: 'Coming Soon', cursive;">
+  		<div class="row" style="padding-top: 30px;">
+  			<div class="col s12">
+  				 <center><h3 style="font-family: 'Finger Paint', cursive;">GHRCEM Pune Confessions</h3></center>
+  			</div>
+  		</div>
+  		<div class="flowtext"><center><b>A hero is someone who understands the responsibility that comes with his freedom.<br> So, Use wisely.</b></center></div>
+  		<br><br>
+		<div class="row">
+	    <form class="col s12 l8 offset-l2" method="post" action="{{ url_for('index') }}">
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <textarea id="textarea" name="textarea" class="materialize-textarea" required></textarea>
+	          <label for="textarea">Confess here...</label>
+	        </div>
+	      </div>
+	      <center>
+	      <button class="btn waves-effect waves-light" type="submit" name="action">Post Anonymously<i class="material-icons right">send</i></button>
+	  </center>
+	    </form>
+	  </div>
+      
+  		<div class="row" style="padding-top: 15px;">
+
+			<div class="col s12">
+				<center>
+            	Created with <span class="red-text text-darken-2"> &hearts; </span>in India by <a href="http://amanroy.me" target="_blank">Aman Roy</a>
+              <br>
+              See Codes <a target="_blank" href="https://github.com/aman-roy/Auto-FB-Confess">here</a>.
+            	</center>
+			</div>
+		</div>
+
+  	</div></b>
+</body>
+</html>

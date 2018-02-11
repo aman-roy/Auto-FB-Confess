@@ -12,8 +12,8 @@ def index():
 		if msg:
 			fbpost(msg)
 			flash('Successfully posted!')
-	
-	return render_template('index.html')
+
+	return render_template('index.html', name=os.environ["NAME"])
 
 
 @app.errorhandler(404)

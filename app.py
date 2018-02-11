@@ -7,7 +7,13 @@ app.secret_key = os.environ["SECRET_KEY"]
 @app.route('/')
 def index():
 	"""Index page"""
-	pass
+	if request.method == "POST":
+		msg = request.form.get("textarea")
+		if msg:
+			fbpost(msg)
+			flash('Successfully posted!')
+	
+	return render_template('index.html')
 
 
 @app.errorhandler(404)
